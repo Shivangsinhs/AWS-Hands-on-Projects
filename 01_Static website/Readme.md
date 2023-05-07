@@ -1,52 +1,57 @@
-**Deploy a Static Website on AWS**
+# Deploy a Static Website on AWS
+
+This guide provides step-by-step instructions for deploying a static website on AWS using Amazon S3 (Simple Storage Service) and Amazon CloudFront. Hosting a static website in the cloud offers simplicity, speed, and security, as it eliminates the need for server-side scripting languages and databases commonly used in dynamic websites.
+
+## Prerequisites
+
+Before you begin, make sure you have the following:
+
+1. An Amazon Web Services (AWS) account.
+2. Website files (HTML, CSS, JavaScript, images, etc.) ready to be hosted on AWS.
+3. Optional: A domain name if you want to use a custom domain for your website.
+
+## Architecture
+
+The architecture for deploying a static website on AWS consists of the following components:
+
+- **Amazon S3**: Serves as the storage service for hosting the static website files. It provides high scalability, reliability, and low-cost storage.
+
+- **Amazon CloudFront**: Acts as a content delivery network (CDN) to distribute the website files globally. It improves the website's performance by caching content and delivering it from the nearest edge location to the end user.
+
+![Untitled Diagram (1)](https://user-images.githubusercontent.com/116307753/236707632-c3516638-1150-4826-9007-f86e0588f303.jpg)
 
 
-The cloud is perfect to host both static as well as Dynamic website.Static website deployment in AWS allows us to easily and securely host the website in the cloud. Unlike dynamic websites, which rely on server-side scripting languages and databases, static websites consist of HTML, CSS, and JavaScript files that are served directly to users. This makes them simpler and faster to deploy, as well as more secure, since they don't require the same level of server-side processing and are less vulnerable to common web application attacks.
+## Steps
 
-AWS offers a range of services for static website deployment, including Amazon S3 (Simple Storage Service), Amazon CloudFront, AWS Amplify, and more. These services allow you to easily store, distribute, and scale your static website, while also providing features lHosting a Static Website in Amazon S3
-This guide provides step-by-step instructions for hosting a static website in Amazon S3. Amazon S3 is a highly scalable and reliable cloud storage service, which is ideal for hosting static websites. By the end of this guide, you'll have a basic understanding of how to create an S3 bucket, upload your website files, and configure the bucket for website hosting.
-...
+Follow these steps to deploy your static website on AWS:
 
+1. Create an S3 Bucket:
+   - Log in to your AWS account and navigate to the S3 console.
+   - Click on "Create bucket" and follow the instructions to create a new bucket.
+   - Choose a unique name for your bucket and select the region closest to your target audience.
 
-**Prerequisites**
-Before you start, you'll need the following:
+2. Enable Static Website Hosting:
+   - Select your newly created bucket and click on the "Properties" tab.
+   - Click on "Static website hosting" and select "Use this bucket to host a website."
+   - Enter the index document (e.g., index.html) and error document (e.g., error.html) names.
 
-1)An Amazon Web Services (AWS) account.
-2)A domain name for your website (optional).
-3)Website files or resume in javascript format (HTML, CSS, JavaScript, images, etc.) to host on S3.
+3. Upload Website Files:
+   - Select your bucket and click on the "Upload" button.
+   - Upload your website files and set the correct permissions (e.g., public read) to make them accessible.
 
+4. Configure DNS (optional):
+   - If you want to use a custom domain name, configure your DNS records to point to your CloudFront distribution.
+   - Go to your DNS provider and create a new CNAME record or an Alias record pointing to your CloudFront distribution.
 
-Steps
-Create an S3 Bucket:
-Log in to your AWS account and go to the S3 console.
-Click on "Create bucket" and follow the wizard to create a new bucket. Choose a unique name for your bucket and select the region closest to your target audience.
-Enable Website Hosting:
-Select your newly created bucket, click on the "Properties" tab, and then click on "Static website hosting."
-Select "Use this bucket to host a website" and enter the index document (e.g., index.html) and error document (e.g., error.html) names.
-Upload Website Files:
-Select your bucket, click on the "Upload" button, and upload your website files.
-Make sure to set the correct permissions for your files (e.g., public read) so that they are accessible to everyone.
-Configure DNS (optional):
-If you want to use a custom domain name, you'll need to configure your DNS records to point to your S3 bucket.
-Go to your DNS provider and create a new CNAME record pointing to your S3 bucket endpoint (e.g., mybucket.s3-website-us-west-2.amazonaws.com).
-Test Your Website:
-After completing the above steps, your website should be live and accessible at the S3 bucket endpoint or your custom domain name (if configured).
-Conclusion
-Hosting a static website in Amazon S3 is a cost-effective and scalable solution for hosting your website files. With the above steps, you can easily set up and host your website in minutes. If you need additional features, such as dynamic content or server-side logic, you may want to consider other AWS services, such as AWS Lambda or Amazon EC2.ike content delivery networks, SSL/TLS encryption, and custom domain support.
+5. Enable CloudFront:
+   - Go to the AWS Management Console and navigate to the CloudFront service.
+   - Create a new CloudFront distribution, selecting your S3 bucket as the origin.
+   - Configure other settings such as caching behavior, SSL/TLS certificates, and distribution settings.
 
-In this project, I created an S3 bucket, configured the bucket for website hosting, and secured it using IAM policies. Next, uploaded the website files to the bucket and speed up content delivery using AWS’s content distribution network service, CloudFront. Lastly, accessed the website in a browser using the unique S3 endpoint.
+6. Test Your Website:
+   - Once the deployment is complete, your website should be live and accessible at the CloudFront distribution URL or your custom domain name (if configured).
+   - Test your website in a browser to ensure everything is working correctly.
 
+## Conclusion
 
-To deploy a static website on AWS, follow these steps:
-
-Create an S3 Bucket: Go to the AWS Management Console and create a new S3 bucket. Make sure to choose a unique name for your bucket, and enable static website hosting in the bucket properties.
-
-Configure IAM Policies: Create an IAM user with permissions to access the S3 bucket and configure the necessary policies to secure the bucket.
-
-Upload Website Files: Upload your website files to the S3 bucket using the AWS Management Console or AWS CLI. Make sure to set the correct permissions for the files.
-
-Enable CloudFront: Create a CloudFront distribution and link it to your S3 bucket. This will speed up content delivery and provide SSL/TLS encryption for your website.
-
-Test Your Website: Once your website is deployed, test it in a browser using the unique S3 endpoint or custom domain name.
-
-By following these steps, you can easily deploy a static website on AWS and take advantage of its features and scalability. Whether you are building a personal blog or a business website, AWS provides the tools and services you need to get your website up and running quickly and securely.
+Deploying a static website on AWS using S3 and CloudFront offers a cost-effective, scalable, and secure solution. The architecture leverages the storage capabilities of S3 and the global content delivery network provided by CloudFront. By following the steps outlined in this guide, you can quickly set up and host your static website on AWS. 
