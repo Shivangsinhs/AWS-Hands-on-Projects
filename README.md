@@ -20,4 +20,4 @@ Each project in this repository is organized into its respective folder. To get 
 
 ## Contact
 
-For any questions or inquiries regarding this repository or the projects within it, please contact Shivang Sinha at sinha.shivang1998@gmail.com.
+For any questions or inquiries regarding this repository or the projects within it, please contact Shivang Sinha at shivangsinha.aws@gmail.com
