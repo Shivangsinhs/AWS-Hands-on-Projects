@@ -1,6 +1,6 @@
-# LevelUp! Lab for Serverless
+# Lab for Serverless
 
-## Lab Overview And High-Level Design
+##  Overview And High-Level Design
 
 In this lab, we will create a serverless API using Amazon API Gateway, AWS Lambda, and DynamoDB. The API will perform various operations on a DynamoDB table, such as create, read, update, and delete items. The high-level design of the solution is as follows:
 
