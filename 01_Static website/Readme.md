@@ -29,19 +29,23 @@ Follow these steps to deploy your static website on AWS:
    - Log in to your AWS account and navigate to the S3 console.
    - Click on "Create bucket" and follow the instructions to create a new bucket.
    - Choose a unique name for your bucket and select the region closest to your target audience.
+<img width="957" alt="1" src="https://user-images.githubusercontent.com/116307753/236711678-38fc03c0-cdc7-422d-949e-627c48134e4f.png">
 
 2. Enable Static Website Hosting:
    - Select your newly created bucket and click on the "Properties" tab.
    - Click on "Static website hosting" and select "Use this bucket to host a website."
    - Enter the index document (e.g., index.html) and error document (e.g., error.html) names.
+<img width="964" alt="4" src="https://user-images.githubusercontent.com/116307753/236711705-50341faa-8541-443d-964b-6f866a322c90.png">
 
 3. Upload Website Files:
    - Select your bucket and click on the "Upload" button.
    - Upload your website files and set the correct permissions (e.g., public read) to make them accessible.
 
-4. Configure DNS (optional):
-   - If you want to use a custom domain name, configure your DNS records to point to your CloudFront distribution.
-   - Go to your DNS provider and create a new CNAME record or an Alias record pointing to your CloudFront distribution.
+<img width="951" alt="5" src="https://user-images.githubusercontent.com/116307753/236711733-958c28b2-2791-4f96-a7e6-2dfd40fd1307.png">
+
+4. Build ARN policy:
+
+<img width="946" alt="7" src="https://user-images.githubusercontent.com/116307753/236711767-07dcb694-4638-44af-8e96-3e890c9bbfaa.png">
 
 5. Enable CloudFront:
    - Go to the AWS Management Console and navigate to the CloudFront service.
@@ -49,8 +53,9 @@ Follow these steps to deploy your static website on AWS:
    - Configure other settings such as caching behavior, SSL/TLS certificates, and distribution settings.
 
 6. Test Your Website:
-   - Once the deployment is complete, your website should be live and accessible at the CloudFront distribution URL or your custom domain name (if configured).
+<img width="962" alt="10" src="https://user-images.githubusercontent.com/116307753/236711829-2bde98c6-3106-4c2f-a8ed-3b3e6ff3b567.png">
    - Test your website in a browser to ensure everything is working correctly.
+<img width="976" alt="11" src="https://user-images.githubusercontent.com/116307753/236711806-338b5b2e-9c32-4c7e-9d0c-b238aa52328e.png">
 
 ## Conclusion
 
