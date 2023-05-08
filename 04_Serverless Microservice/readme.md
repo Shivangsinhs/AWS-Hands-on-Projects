@@ -7,6 +7,7 @@ Let's start with the High Level Design.
 ## Architecture
 The key architecture components of the serverless API using Amazon API Gateway, AWS Lambda, and DynamoDB are as follows:
 
+![Untitled Diagram (2)](https://user-images.githubusercontent.com/116307753/236710088-90c96ae7-bcd4-4309-81bb-f4be7b10c414.jpg)
 
 
 1. Amazon API Gateway: It acts as the entry point for the API, allowing clients to interact with the backend services. API Gateway provides features such as request routing, authentication, and rate limiting. It integrates with Lambda functions to process API requests.
