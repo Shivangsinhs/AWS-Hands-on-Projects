@@ -1,5 +1,3 @@
-Certainly! Here's a documentation template for the overall project, including the percentage of resources used:
-
 # Project Documentation: AWS Hands-on Projects
 
 ## Project Overview
